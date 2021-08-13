@@ -1,0 +1,25 @@
+<div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a href="{{ url_for('routes.home') }}" class="navbar-brand">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-code-slash code-icon" viewBox="0 0 16 16">
+                <path
+                    d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z" />
+            </svg></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+            <div class="navbar-nav align-items-end mt-4">
+                <!-- TO DO: FIX URL_FORS to match routes -->
+                <a href="{{ url_for('routes.home') }}"" class=" nav-link px-lg-4">World News</a>
+                <a href="{{ url_for('routes.stonks') }}" class="nav-link px-lg-4">Stocks</a>
+                <a href="{{ url_for('routes.sports') }}" class="nav-link px-lg-4">Sports</a>
+                <a href="{{ url_for('routes.covid') }}" class="nav-link px-lg-4">COVID-19</a>
+                <a href="{{ url_for('routes.climate_change') }}" class="nav-link px-lg-4">Climate Change</a>
+                <a href="{{ url_for('routes.florida_man') }}" class="nav-link px-lg-4">Florida Man</a>
+            </div>
+        </div>
+    </nav>
+</div>

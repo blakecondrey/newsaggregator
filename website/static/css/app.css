@@ -1,0 +1,76 @@
+
+@import url('https://fonts.googleapis.com/css?family=Raleway|Roboto+Slab');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color:#0a192f;
+    overflow: unset;
+    color: #e6f1ff;
+}
+
+.btn {
+    border-radius: 10px;
+}
+
+.btn:hover {
+    background-color: #8892b0;
+    border-radius: 10px;
+}
+
+.navbar-brand {
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.navbar {
+    background: transparent;
+}
+
+.navbar-toggler {
+    color:white;
+}
+
+a.nav-link {
+    color:white !important;
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    cursor: pointer !important;
+    /* text-decoration: none !important; */
+}
+
+a.nav-link:hover {
+    color: #64ffda !important;
+}
+
+.code-icon:hover {
+    color: #64ffda;
+}
+
+.card-color {
+    color: #0a192f;
+}
+
+.top-buffer {
+    margin-top: 5%;
+    margin-bottom: 3%;
+}
+
+/* FOOTER */
+
+.page-footer {
+    background: #e6f1ff;
+    min-height: 4em;
+    padding: 50px;
+    position: relative;
+    color: #0a192f;
+}
+
+.copy {
+    padding-top: 30px;
+}

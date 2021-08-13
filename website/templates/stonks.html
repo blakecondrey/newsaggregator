@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row justify-content-center align-items-center">
+    <div class="col-6 top-buffer text-center">
+        <h1 class="d-sm-6 d-md-3">{{ time }}</h1>
+    </div>
+    <div class="col-6 top-buffer text-center">
+        <h1 class="d-sm-6 d-md-3">Stock Market Headlines</h1>
+    </div>
+</div>
+<center>
+    <div class="container row equal-cols">
+        {% for title, desc, img, url in context %}
+        <!--started-->
+        <div class="col-md-6 p-2 m-auto">
+        <div class="card card-color">
+            <img class="card-img-top img-fluid myimage" src="{{ img }}" alt="News">
+            <div class="card-body">
+                <a href="{{ url }}" target="_blank"><h3 class="card-title strong">{{ title }}</h3></a>
+                <p class="card-text">{{ desc }}</p>
+            </div>
+        </div>
+        </div>
+        {% endfor %}
+    </div>
+</center>
+{% endblock %}
