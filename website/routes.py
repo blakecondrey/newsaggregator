@@ -1,5 +1,7 @@
 from flask import Blueprint, render_template
-from datetime import datetime, time
+from datetime import datetime
+from pytz import timezone
+from tzlocal import get_localzone
 from newsapi import NewsApiClient
 from dotenv import load_dotenv
 import random
@@ -24,15 +26,14 @@ rights = [
     "bytes",
     "nights",
     "tights",
-    "writes",
-    "excitement",
+    "kites",
     "mites"
 ]
 
 routes = Blueprint("routes", __name__, static_folder="static", 
                     template_folder="templates")
 
-news_api = NewsApiClient(api_key=API_KEY)
+newsapi = NewsApiClient(api_key=API_KEY)
 
 def grab_headlines(top_headlines):
     articles = top_headlines['articles']
@@ -50,11 +51,20 @@ def grab_headlines(top_headlines):
     
     return output
 
+    # starting new function for time
+
+def get_time():
+    time_format = "%m/%d/%Y"
+    date_time = datetime.now(timezone('UTC'))
+    now_local = date_time.astimezone(get_localzone())
+    time_now = now_local.strftime(time_format)
+
+    return time_now
+
 @routes.route('/')
 def home():
-    date_time = datetime.now()
-    time_now = date_time.strftime("%m/%d/%Y")
-    top_headlines = news_api.get_top_headlines(language = 'en')
+    time_now = get_time()
+    top_headlines = newsapi.get_top_headlines(language = 'en')
     output = grab_headlines(top_headlines)
     return render_template('index.html', context=output, 
                     contact = contact_points, 
@@ -63,9 +73,8 @@ def home():
 
 @routes.route('/stonks')
 def stonks():
-    date_time = datetime.now()
-    time_now = date_time.strftime("%m/%d/%Y")
-    top_headlines = news_api.get_everything(q = 'stocks', language = 'en',
+    time_now = get_time()
+    top_headlines = newsapi.get_everything(q = 'stocks', language = 'en',
                     sources = 'bbc-news, google-news, the-wall-street-journal')
     output = grab_headlines(top_headlines)
     return render_template('stonks.html', context = output, 
@@ -75,9 +84,8 @@ def stonks():
 
 @routes.route('/sports')
 def sports():
-    date_time = datetime.now()
-    time_now = date_time.strftime("%m/%d/%Y")
-    top_headlines = news_api.get_everything(q = 'sports', language = 'en',
+    time_now = get_time()
+    top_headlines = newsapi.get_everything(q = 'sports', language = 'en',
                     sources = 'google-news, espn')
     output = grab_headlines(top_headlines)
     return render_template('sports.html', context = output, 
@@ -87,9 +95,8 @@ def sports():
 
 @routes.route('/florida-man')
 def florida_man():
-    date_time = datetime.now()
-    time_now = date_time.strftime("%m/%d/%Y")
-    top_headlines = news_api.get_everything(qintitle = 'florida man',
+    time_now = get_time()
+    top_headlines = newsapi.get_everything(qintitle = 'florida man',
                     language = 'en',
                     sources = 'fox-news, cnn, google-news')
     output = grab_headlines(top_headlines)
@@ -100,9 +107,8 @@ def florida_man():
 
 @routes.route('/climate-change')
 def climate_change():
-    date_time = datetime.now()
-    time_now = date_time.strftime("%m/%d/%Y")
-    top_headlines = news_api.get_everything(q = 'climate change',
+    time_now = get_time()
+    top_headlines = newsapi.get_everything(q = 'climate change',
                     language = 'en',
                     sources = 'cnn, bbc-news, the-verge, google-news')
     output = grab_headlines(top_headlines)
@@ -113,9 +119,8 @@ def climate_change():
 
 @routes.route('/covid')
 def covid():
-    date_time = datetime.now()
-    time_now = date_time.strftime("%m/%d/%Y")
-    top_headlines = news_api.get_everything(q = 'covid',
+    time_now = get_time()
+    top_headlines = newsapi.get_everything(q = 'covid',
                     language = 'en')
     output = grab_headlines(top_headlines)
     return render_template('covid.html', context = output, 
