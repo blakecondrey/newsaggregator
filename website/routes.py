@@ -9,7 +9,6 @@ import os
 
 import newsapi
 load_dotenv()
-
 API_KEY = os.getenv("API_KEY")
 
 contact_points = {
@@ -32,6 +31,7 @@ rights = [
 
 routes = Blueprint("routes", __name__, static_folder="static", 
                     template_folder="templates")
+
 
 newsapi = NewsApiClient(api_key=API_KEY)
 
