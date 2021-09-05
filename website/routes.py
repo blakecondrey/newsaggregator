@@ -15,7 +15,7 @@ contact_points = {
     "email": "condrey.blake1217@gmail.com",
     "github": "https://github.com/blakecondrey",
     "linkedin": "https://www.linkedin.com/in/blakecondrey/",
-    "portfolio": "www.blakecondrey.com"
+    "portfolio": "http://www.blakecondrey.com"
 }
 
 rights = [
