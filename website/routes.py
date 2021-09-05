@@ -14,19 +14,19 @@ API_KEY = os.getenv("API_KEY")
 contact_points = {
     "email": "condrey.blake1217@gmail.com",
     "github": "https://github.com/blakecondrey",
-    "linkedin": "https://www.linkedin.com/in/blakecondrey/"
+    "linkedin": "https://www.linkedin.com/in/blakecondrey/",
+    "portfolio": "www.blakecondrey.com"
 }
 
 rights = [
     "rights",
     "knights",
-    "spite",
+    "stalactites",
     "fights",
     "bytes",
-    "nights",
+    "stalagmites",
     "tights",
-    "kites",
-    "mites"
+    "kites"
 ]
 
 routes = Blueprint("routes", __name__, static_folder="static", 
