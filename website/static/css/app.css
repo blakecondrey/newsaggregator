@@ -86,6 +86,7 @@ a.nav-link:hover {
 @media only screen and (max-width: 450px) {
     body {
         font-family: 'Merriweather', 'Roboto Slab';
+        font-style: italic;
     }
     .card {
         font-family: 'Roboto Slab', serif;
