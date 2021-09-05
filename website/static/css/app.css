@@ -12,7 +12,7 @@ body {
     background-color:#fbfbf8;
     overflow: unset;
     color: black;
-    font-family: 'Merriweather', serif;
+    font-family: 'Merriweather', 'Roboto Slab';
 }
 
 .btn {
