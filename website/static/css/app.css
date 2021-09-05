@@ -9,7 +9,7 @@
 }
 
 body {
-    background-color:#fbfbf8;
+    background-color: #fbfbf8;
     overflow: unset;
     color: black;
     font-family: 'Merriweather', 'Roboto Slab';
@@ -30,9 +30,9 @@ body {
     cursor: pointer;
 }
 
-/* .navbar {
-    background: transparent;
-} */
+.navbar {
+    background-color: #fbfbf8;
+}
 
 .navbar-toggler {
     color:black;
@@ -85,7 +85,7 @@ a.nav-link:hover {
 
 @media only screen and (max-width: 450px) {
     body {
-        font-family: 'Merriweather', serif;
+        font-family: 'Merriweather', 'Roboto Slab';
     }
     .card {
         font-family: 'Roboto Slab', serif;
